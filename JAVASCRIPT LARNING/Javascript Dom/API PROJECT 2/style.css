@@ -1,0 +1,70 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  font-size: 16px;
+  background-image: url(img/img.jpg);
+  background-size: cover; /* পুরো স্ক্রিনে ফিট করাবে */
+  background-position: center; /* ছবিটাকে মাঝখানে রাখবে */
+  background-attachment: fixed; /* ব্যাকগ্রাউন্ড স্থির রাখবে */
+  background-repeat: no-repeat; /* ছবিটা রিপিট করবে না */
+  scroll-behavior: smooth;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+#container {
+  padding: 20px;
+}
+#img_container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+}
+.img_container_item {
+  flex-basis: 32%;
+  width: 96%;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  /* From https://css.glass */
+  background: rgba(235, 177, 177, 0.13);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: 0.9s all;
+}
+.img_container_item:hover {
+  transform: translateY(-10px);
+}
+.img_container_item img {
+  border-radius: 10px;
+  transition: 0.9s all;
+}
+.img_container_item img:hover {
+  transform: scale(1.04);
+}
+.img_container_item p {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 500px) {
+  #img_container {
+    flex-direction: column;
+  }
+}
